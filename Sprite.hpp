@@ -12,12 +12,15 @@ class Sprite {
 public:
     Sprite();
     virtual ~Sprite();
-    virtual void init(int , int , unsigned int) = 0;
     virtual void update(long) = 0;
     virtual void render() = 0;
     
-    int x;
-    int y;
+    float x;
+    float y;
+    
+    float width;
+    float height;
+    
     bool active;
 protected:
     unsigned int textureId;

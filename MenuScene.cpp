@@ -12,7 +12,7 @@ MenuScene::~MenuScene() {
 }
 
 void MenuScene::init(){
-   character->init(0, 0, Texture::LOAD_BMP("back.bmp"));
+   character->init(50.f, 50.f, Texture::LOAD_BMP("back.bmp"));
 }
 
 void MenuScene::input(SDL_Event& e){

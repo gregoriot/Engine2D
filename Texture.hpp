@@ -16,9 +16,12 @@ class Texture {
 public:
     Texture();
     virtual ~Texture();
-    static unsigned int LOAD_BMP(const char* filename);
+    static Texture* LOAD_BMP(const char* filename);
+    
+    unsigned int id;
+    float width;
+    float height;
 private:
-
 };
 
 #endif	/* TEXTURE_HPP */

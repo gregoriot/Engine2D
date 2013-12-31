@@ -15,10 +15,14 @@ Character::~Character() {
     
 }
 
-void Character::init(int _x, int _y, unsigned int _textureId){
+void Character::init(float _x, float _y, Texture* texture){
     x = _x;
     y = _y;
-    textureId = _textureId;
+    
+    width = texture->width;
+    height = texture->height;
+    
+    textureId = texture->id;
     
     active = true;
 }
@@ -32,15 +36,15 @@ void Character::render(){
     
     glBegin(GL_QUADS);
         glTexCoord2f(0, 0);
-        glVertex2f(0.0f, 0.0f);
+        glVertex2f(x, y);
 
         glTexCoord2f(1, 0);
-        glVertex2f(500, 0.0f);
+        glVertex2f(width, y);
 
         glTexCoord2f(1, 1);
-        glVertex2f(500, 500);	 
+        glVertex2f(width, height);	 
 
         glTexCoord2f(0, 1);
-        glVertex2f(0, 500);
+        glVertex2f(x, height);
     glEnd();
 }
