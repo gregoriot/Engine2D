@@ -9,14 +9,10 @@
 #define	TEXTURE_HPP
 
 #include "SDL/SDL_opengl.h"
-#include "SDL/SDL_image.h"
-#include <iostream>
-
 class Texture {
 public:
     Texture();
     virtual ~Texture();
-    static Texture* LOAD_BMP(const char* filename);
     
     unsigned int id;
     float width;

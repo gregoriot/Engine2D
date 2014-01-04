@@ -1,6 +1,6 @@
 build/Debug/GNU-Linux-x86/GamePanel.o: GamePanel.cpp GamePanel.hpp \
  Scene.hpp MenuScene.hpp Vector2f.hpp Character.hpp Sprite.hpp \
- Texture.hpp
+ Texture.hpp Rect.hpp
 
 GamePanel.hpp:
 
@@ -15,3 +15,5 @@ Character.hpp:
 Sprite.hpp:
 
 Texture.hpp:
+
+Rect.hpp:

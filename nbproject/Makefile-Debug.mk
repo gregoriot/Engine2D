@@ -36,11 +36,14 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Character.o \
+	${OBJECTDIR}/Collision.o \
 	${OBJECTDIR}/GamePanel.o \
 	${OBJECTDIR}/MenuScene.o \
+	${OBJECTDIR}/Rect.o \
 	${OBJECTDIR}/Scene.o \
 	${OBJECTDIR}/Sprite.o \
 	${OBJECTDIR}/Texture.o \
+	${OBJECTDIR}/TextureLoader.o \
 	${OBJECTDIR}/Vector2f.o \
 	${OBJECTDIR}/main.o
 
@@ -74,6 +77,11 @@ ${OBJECTDIR}/Character.o: Character.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Character.o Character.cpp
 
+${OBJECTDIR}/Collision.o: Collision.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Collision.o Collision.cpp
+
 ${OBJECTDIR}/GamePanel.o: GamePanel.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -83,6 +91,11 @@ ${OBJECTDIR}/MenuScene.o: MenuScene.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MenuScene.o MenuScene.cpp
+
+${OBJECTDIR}/Rect.o: Rect.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Rect.o Rect.cpp
 
 ${OBJECTDIR}/Scene.o: Scene.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -98,6 +111,11 @@ ${OBJECTDIR}/Texture.o: Texture.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Texture.o Texture.cpp
+
+${OBJECTDIR}/TextureLoader.o: TextureLoader.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TextureLoader.o TextureLoader.cpp
 
 ${OBJECTDIR}/Vector2f.o: Vector2f.cpp 
 	${MKDIR} -p ${OBJECTDIR}

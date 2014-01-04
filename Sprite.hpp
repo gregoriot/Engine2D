@@ -17,6 +17,7 @@ public:
     
     float x;
     float y;
+    float radius;
     
     float width;
     float height;

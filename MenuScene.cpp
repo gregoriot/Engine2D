@@ -1,5 +1,6 @@
 #include "MenuScene.hpp"
 #include "Texture.hpp"
+#include "TextureLoader.hpp"
 
 MenuScene::MenuScene(GamePanel& _parent) {
     parent = &_parent;
@@ -12,23 +13,57 @@ MenuScene::~MenuScene() {
 }
 
 void MenuScene::init(){
-   character->init(50.f, 50.f, Texture::LOAD_BMP("back.bmp"));
+   character->init(0.f, 0.f, 2, 8, TextureLoader::PNG("Assets/youKnowHow.png"));
 }
 
 void MenuScene::input(SDL_Event& e){
     while (SDL_PollEvent(&e)) {
-        switch (e.type) {
-            case SDL_QUIT:
-                parent->run = false;
-                break;
-            case SDL_KEYDOWN:
-                switch (e.key.keysym.sym) {
-                    case SDLK_ESCAPE:
-                        parent->run = false;
-                    default:
-                        break;
-                }
-                break;
+        //Windowns Close Button.
+        if(e.type == SDL_QUIT){
+            parent->run = false;
+            break;
+        }
+
+        //Mouse motion.
+        if(e.type == SDL_MOUSEMOTION ) {
+            character->x = e.button.x;
+            character->y = e.button.y;
+        }
+        
+        //Mouse button was pressed.
+        if(e.type == SDL_MOUSEBUTTONDOWN ){
+            //Left mouse button was pressed.
+            if(e.button.button == SDL_BUTTON_LEFT ){
+                ;
+            }
+        }
+        
+        //Mouse button was release.
+        if(e.type == SDL_MOUSEBUTTONUP){
+            ;
+        }
+        
+        //Keyboard key down.
+        if(e.type == SDL_KEYDOWN){
+            switch (e.key.keysym.sym) {
+                case SDLK_ESCAPE:
+                    parent->run = false;
+                    break;
+                case SDLK_LEFT:
+                    character->x -= 2;
+                    break;
+                case SDLK_RIGHT:
+                    character->x += 2;
+                    break;
+                case SDLK_UP:
+                    character->y -= 2;
+                    break;
+                case SDLK_DOWN:
+                    character->y += 2;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
@@ -44,17 +79,31 @@ void MenuScene::render(){
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glOrtho(0.0, parent->width, parent->height, 0.0, -1.0, 10.0);
+    
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
+    
+    //Disable depth.
     glDisable(GL_CULL_FACE);
     glClear(GL_DEPTH_BUFFER_BIT);
-    glColor3f(1.f, 1.f, 1.f);
         
-    glEnable(GL_TEXTURE_2D);
-    
-    character->render();
+    //Enable transparency and translucency.
+    glEnable (GL_BLEND);
+    glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+    glColor3f(0.2f,1,0.7f);
+    glBegin(GL_QUADS);
+        glVertex2f(0, 0);
+        glVertex2f(800, 0);
+        glVertex2f(800, 600);	 
+        glVertex2f(0,600);
+    glEnd();
+    glColor3f(1,1,1);
+    
+    glEnable(GL_TEXTURE_2D);
+    character->render();
     glDisable(GL_TEXTURE_2D);
+    
     glMatrixMode(GL_PROJECTION);
     glMatrixMode(GL_MODELVIEW); 
 
