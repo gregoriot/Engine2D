@@ -14,8 +14,10 @@
 #include "Scene.hpp"
 #include "Vector2f.hpp"
 #include "Character.hpp"
+#include "Font_tff.hpp"
 #include <SDL/SDL_events.h>
 #include <SDL/SDL_image.h>
+#include <SDL/SDL_ttf.h>
 #include <string>
 
 class MenuScene : public Scene {
@@ -31,6 +33,8 @@ private:
     Vector2f camera;
     
     Character* character;
+
+    Font_tff font;
 };
 
 #endif	/* MENUSCENE_HPP */

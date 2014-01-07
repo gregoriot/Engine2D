@@ -37,6 +37,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Character.o \
 	${OBJECTDIR}/Collision.o \
+	${OBJECTDIR}/Color.o \
+	${OBJECTDIR}/Font_tff.o \
 	${OBJECTDIR}/GamePanel.o \
 	${OBJECTDIR}/MenuScene.o \
 	${OBJECTDIR}/Rect.o \
@@ -81,6 +83,16 @@ ${OBJECTDIR}/Collision.o: Collision.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Collision.o Collision.cpp
+
+${OBJECTDIR}/Color.o: Color.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Color.o Color.cpp
+
+${OBJECTDIR}/Font_tff.o: Font_tff.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Font_tff.o Font_tff.cpp
 
 ${OBJECTDIR}/GamePanel.o: GamePanel.cpp 
 	${MKDIR} -p ${OBJECTDIR}

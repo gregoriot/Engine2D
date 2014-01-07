@@ -1,46 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="90">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <logicalFolder name="f5"
-                   displayName="Characters"
-                   projectFiles="true"
-                   kind="ROOT">
+    <logicalFolder name="f5" displayName="Characters" projectFiles="true">
       <itemPath>Character.cpp</itemPath>
       <itemPath>Character.hpp</itemPath>
     </logicalFolder>
-    <logicalFolder name="f6" displayName="Game" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f6" displayName="Game" projectFiles="true">
       <itemPath>GamePanel.cpp</itemPath>
       <itemPath>GamePanel.hpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
-    <logicalFolder name="f2"
-                   displayName="Math Modulo"
-                   projectFiles="true"
-                   kind="ROOT">
+    <logicalFolder name="f2" displayName="Math Modulo" projectFiles="true">
+      <itemPath>Color.cpp</itemPath>
+      <itemPath>Color.hpp</itemPath>
       <itemPath>Rect.cpp</itemPath>
       <itemPath>Rect.hpp</itemPath>
       <itemPath>Vector2f.cpp</itemPath>
       <itemPath>Vector2f.hpp</itemPath>
     </logicalFolder>
-    <logicalFolder name="f3"
-                   displayName="Resources"
-                   projectFiles="true"
-                   kind="ROOT">
+    <logicalFolder name="f3" displayName="Resources" projectFiles="true">
+      <itemPath>Font_tff.cpp</itemPath>
+      <itemPath>Font_tff.hpp</itemPath>
       <itemPath>Texture.cpp</itemPath>
       <itemPath>Texture.hpp</itemPath>
       <itemPath>TextureLoader.cpp</itemPath>
       <itemPath>TextureLoader.hpp</itemPath>
     </logicalFolder>
-    <logicalFolder name="f1" displayName="Scenes" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f1" displayName="Scenes" projectFiles="true">
       <itemPath>MenuScene.cpp</itemPath>
       <itemPath>MenuScene.hpp</itemPath>
       <itemPath>Scene.cpp</itemPath>
       <itemPath>Scene.hpp</itemPath>
     </logicalFolder>
-    <logicalFolder name="f4"
-                   displayName="Utilities"
-                   projectFiles="true"
-                   kind="ROOT">
+    <logicalFolder name="f4" displayName="Utilities" projectFiles="true">
       <itemPath>Collision.cpp</itemPath>
       <itemPath>Collision.hpp</itemPath>
       <itemPath>Sprite.cpp</itemPath>
@@ -90,6 +82,14 @@
       <item path="Collision.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Collision.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Color.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Color.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Font_tff.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Font_tff.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GamePanel.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -153,6 +153,14 @@
       <item path="Collision.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Collision.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Color.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Color.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Font_tff.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Font_tff.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GamePanel.cpp" ex="false" tool="1" flavor2="0">
       </item>

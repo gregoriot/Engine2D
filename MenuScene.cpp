@@ -13,6 +13,8 @@ MenuScene::~MenuScene() {
 }
 
 void MenuScene::init(){
+   font.init("Fonts/iwantv2.ttf", 80, FONT_TTF_UNDERLINE);
+   
    character->init(0.f, 0.f, 2, 8, TextureLoader::PNG("Assets/youKnowHow.png"));
 }
 
@@ -98,11 +100,15 @@ void MenuScene::render(){
         glVertex2f(800, 600);	 
         glVertex2f(0,600);
     glEnd();
-    glColor3f(1,1,1);
+    glColor4f(1,1,1,1);
     
     glEnable(GL_TEXTURE_2D);
     character->render();
+    
+    font.setColor(1,0,0,1);
+    font.render("texto", 300, 300);
     glDisable(GL_TEXTURE_2D);
+    
     
     glMatrixMode(GL_PROJECTION);
     glMatrixMode(GL_MODELVIEW); 

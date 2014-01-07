@@ -39,6 +39,7 @@ public:
     bool run;   //Variable that control game is running.
 private:
     SDL_Surface* screen;
+        
     int bbp;
     int flags;
     

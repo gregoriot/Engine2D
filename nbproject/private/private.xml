@@ -15,12 +15,16 @@
             <file>file:/home/gregorio/git/Engine2D/Character.hpp</file>
             <file>file:/home/gregorio/git/Engine2D/Character.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/GamePanel.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Color.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Rect.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Scene.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Font_tff.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Font_tff.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Vector2f.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Texture.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/MenuScene.hpp</file>
             <file>file:/home/gregorio/git/Engine2D/Vector2f.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Color.hpp</file>
             <file>file:/home/gregorio/git/Engine2D/Sprite.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Collision.hpp</file>
             <file>file:/home/gregorio/git/Engine2D/MenuScene.cpp</file>
