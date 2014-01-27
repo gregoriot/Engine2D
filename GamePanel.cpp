@@ -2,27 +2,32 @@
 #include "MenuScene.hpp"
 
 GamePanel::GamePanel() {
-
+    currentScene = NULL;
 }
 
 GamePanel::~GamePanel() {
-    
+    gl->~GL();
+    al->~AL();
 }
 
 void GamePanel::init(){
+    run = true;
     width = 800;
     height = 600;
     bbp = 16;
-    
-    currentScene = new MenuScene(*this);
     
     countTimer = 0;
     fps = 0;
     sfps = 0;
     
     initSDL();
-    initOpenGL();
+    gl = new GL();
+    gl->initOpenGL(width, height);
     
+    al = new AL();
+    al->initOpenAL();
+    
+    currentScene = new MenuScene(this, gl, al);
     mainLoop();
 }
 
@@ -55,26 +60,6 @@ void GamePanel::initSDL(){
     screen = SDL_SetVideoMode(width, height, bbp, flags);
 }
 
-void GamePanel::initOpenGL(){
-    glClearColor(0.f, 0.f, 0.f, 0.f);
-    glClearDepth(1.f);
-    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LEQUAL);
-    glShadeModel(GL_SMOOTH);
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
-    
-    //Set View
-    float ratio = ((float) width / (float) height);
-
-    glViewport(0, 0, width, height);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluPerspective(45.f, ratio, .1f, 100.f);
-
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-}
-
 void GamePanel::mainLoop(){
     SDL_Event events;
     currentScene->init();
@@ -98,7 +83,6 @@ void GamePanel::mainLoop(){
         }
     }
      
-    
     SDL_FreeSurface(screen);
     SDL_Quit();
 }

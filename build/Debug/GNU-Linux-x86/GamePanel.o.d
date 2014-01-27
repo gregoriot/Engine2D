@@ -1,23 +1,36 @@
 build/Debug/GNU-Linux-x86/GamePanel.o: GamePanel.cpp GamePanel.hpp \
- Scene.hpp MenuScene.hpp Vector2f.hpp Character.hpp Sprite.hpp \
- Texture.hpp Rect.hpp Font_tff.hpp Color.hpp
+ Scene.hpp GL.hpp Texture.hpp AL.hpp Sound.hpp MenuScene.hpp Vector2f.hpp \
+ Font_ttf.hpp Color.hpp Collision.hpp Sprite.hpp ResourceLoader.hpp \
+ GamePlay.hpp Character.hpp Camera.hpp
 
 GamePanel.hpp:
 
 Scene.hpp:
 
+GL.hpp:
+
+Texture.hpp:
+
+AL.hpp:
+
+Sound.hpp:
+
 MenuScene.hpp:
 
 Vector2f.hpp:
 
-Character.hpp:
+Font_ttf.hpp:
+
+Color.hpp:
+
+Collision.hpp:
 
 Sprite.hpp:
 
-Texture.hpp:
+ResourceLoader.hpp:
 
-Rect.hpp:
+GamePlay.hpp:
 
-Font_tff.hpp:
+Character.hpp:
 
-Color.hpp:
+Camera.hpp:

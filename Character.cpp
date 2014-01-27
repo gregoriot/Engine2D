@@ -1,13 +1,5 @@
-/* 
- * File:   Character.cpp
- * Author: gregorio
- * 
- * Created on 31 de Dezembro de 2013, 11:43
- */
-
-#include <iostream>
-
 #include "Character.hpp"
+#include "ResourceLoader.hpp"
 
 Character::Character() {
     
@@ -17,14 +9,14 @@ Character::~Character() {
     
 }
 
-void Character::init(float _x, float _y, int _numberAnimations, int _numberFrames, Texture* texture){
+void Character::init(float _x, float _y, int _numberAnimations, int _numberFrames, Texture* _texture, GL* _gl, AL* _al){
     x = _x;
     y = _y;
     
-    width = texture->width / _numberFrames;
+    texture = _texture;
+        
+    width  = texture->width  / _numberFrames;
     height = texture->height / _numberAnimations;
-    
-    textureId = texture->id;
     
     active = true;
     
@@ -39,16 +31,20 @@ void Character::init(float _x, float _y, int _numberAnimations, int _numberFrame
     frameProp = 1.f/numberFrames;
     animationProp = 1.f/numberAnimations;
     
-    collisionBox.init(x, y, height, width);
+    sound = ResourceLoader::WAV("Assets/test.wav");
+    
+    gl = _gl;
+    al = _al;
 }
 
 void Character::update(long difTime){
      frameTimer += difTime;
-      currentFrame = (frameTimer/timeBetweenFrames)%numberFrames;
+     currentFrame = (frameTimer/timeBetweenFrames)%numberFrames;
+     alSourcePlay(sound->source);
 }
 
 void Character::render(){
-    glBindTexture(GL_TEXTURE_2D, textureId); //inicia o uso da texturo com o id gerado
+    glBindTexture(GL_TEXTURE_2D, texture->id); //inicia o uso da texturo com o id gerado
     
     float beginCoordX = currentFrame*frameProp;
     float beginCoordY = currentAnimation*animationProp;

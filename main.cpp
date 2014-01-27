@@ -1,8 +1,10 @@
 /* 
  * File:   main.cpp
- * Author: gregorio
+ * Author: Gilvanei Gregório
  *
  * Created on 11 de Dezembro de 2013, 09:24
+ * 
+ * Main.
  */
 
 #include "GamePanel.hpp"

@@ -1,6 +1,6 @@
 /* 
  * File:   GamePanel.hpp
- * Author: gregorio
+ * Author: Gilvanei Gregório
  *
  * Created on 11 de Dezembro de 2013, 09:19
  * 
@@ -11,46 +11,81 @@
 #ifndef GAMEPANEL_HPP
 #define	GAMEPANEL_HPP
 
-#include <iostream>
-#include <GL/gl.h> //always after include glew, never before.
-#include <GL/glu.h>
 #include "SDL/SDL.h"
+#include <SDL/SDL_opengl.h> //always after include glew, never before.
+#include <GL/glu.h>
+
 #include "Scene.hpp"
+#include "GL.hpp"
+#include "AL.hpp"
+#include "Sound.hpp"
+
+#include <iostream>
+
 
 class GamePanel {
 public:
+    /** Default constructor.*/
     GamePanel();
+    
+    /** Default destructor.*/
     virtual ~GamePanel();
     
-    //Init all functions of class. 
+    /**Init all functions of class.*/ 
     void init();
-    //Init all functions SDL.
+    
+    /**Init all functions SDL.*/
     void initSDL();
-    //Init all functions SDL.
-    void initOpenGL();
     
-    /*Main loop of game, like draws, update and treats 
-    inputs of scenes.*/
+    /**
+    * Main loop of game, like draws, update
+    * and treats inputs of scenes.
+    */
     void mainLoop();
+
+    /**Width Screen.*/
+    int width;
     
-    int width;  //Width Screen.
-    int height; //Height Screen.
+    /**Height Screen.*/
+    int height;
      
-    bool run;   //Variable that control game is running.
-private:
-    SDL_Surface* screen;
-        
-    int bbp;
-    int flags;
+    /**Variable that control game is running.*/
+    bool run;
     
+    /**Current scene running.*/
     Scene* currentScene;
     
+    /**GL object.*/
+    GL* gl;
+    
+    /**AL object.*/
+    AL* al;
+private:
+    /**Sceen object.*/
+    SDL_Surface* screen;
+
+    /**Bailey Borwein Plouffe.*/
+    int bbp;
+    
+    /**Flags of screen.*/
+    int flags;
+    
+    /**Last time of system.*/
     int lastTime;
+    
+    /**Current time of system.*/
     int currentTime;
+    
+    /**Dif time of system.*/
     int difTime;
+    
+    /**Count timer of system.*/
     int countTimer;
     
+    /**Frames per seconds.*/
     int fps;
+    
+    /**Count of frames per seconds.*/
     int sfps;
 };
 

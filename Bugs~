@@ -1,1 +1,7 @@
-Need Fix the the colors of bitmap 24 bits are inverted. 
+-The colors of bitmap 24 bits are inverted
+Class Texture, methods LOAD_BMP_24BITS.
+
+-Problems with includs
+Class GamePanel
+
+

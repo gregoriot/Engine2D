@@ -1,60 +1,40 @@
-/* 
- * File:   Font_tff.cpp
- * Author: gregorio
- * 
- * Created on 6 de Janeiro de 2014, 13:08
- */
+#include "Font_ttf.hpp"
 
-#include "Font_tff.hpp"
-
-Font_tff::Font_tff() {
-    
+Font_ttf::Font_ttf() {
+     color = new Color();
 }
 
-Font_tff::~Font_tff() {
+Font_ttf::~Font_ttf() {
     TTF_CloseFont( font );
     TTF_Quit();
 }
 
-void Font_tff::init(const char* _filename, float _size){
+void Font_ttf::init(const char* _filePath, float _size){
     if( TTF_Init() == -1 ){
         std::cout<<"error load font ttf";
     }
         
-    filename = _filename;
+    filePath = _filePath;
     size = _size;
-    font = TTF_OpenFont(filename, size);
+    font = TTF_OpenFont(filePath, size);
 }
 
-void Font_tff::init(const char* _filename, float _size, int style){
+void Font_ttf::init(const char* _filePath, float _size, int style){
     if( TTF_Init() == -1 ){
         std::cout<<"error load font ttf";
     }
         
-    filename = _filename;
+    filePath = _filePath;
     size = _size;
-    font = TTF_OpenFont(filename, size);
+    font = TTF_OpenFont(filePath, size);
     TTF_SetFontStyle(font, style);
 }
 
-void Font_tff::setSize(float _size){
-    size = _size;
-    
-    TTF_CloseFont(font);
-    font = TTF_OpenFont(filename, size);
-}
-
-void Font_tff::setColor(float _red, float _green, float _blue, float _alpha){
-    color.red = _red;
-    color.green = _green;
-    color.blue = _blue;
-    color.alpha = _alpha;
-}
-
-void Font_tff::render(const char* text, float x, float y){
+void Font_ttf::render(const char* text, float x, float y){
 	//Init colors and surfaces menssage.
-    color.parseTo255();
-	SDL_Color Color = {color.red, color.green, color.blue};
+    color->parseTo255();
+	SDL_Color Color = {color->red, color->green, color->blue};
+    color->parseTo1();
 	SDL_Surface *messageSurface = TTF_RenderText_Blended(const_cast<TTF_Font*>(font), text, Color);
 	
     //Generate an OpenGL texture.

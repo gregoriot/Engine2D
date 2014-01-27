@@ -7,29 +7,35 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/gregorio/git/Engine2D/Texture.hpp</file>
-            <file>file:/home/gregorio/git/Engine2D/TextureLoader.hpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Rect.hpp</file>
-            <file>file:/home/gregorio/git/Engine2D/TextureLoader.cpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Collision.cpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Character.hpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Character.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/GL.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/AL.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/GL.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/GamePlay.hpp</file>
             <file>file:/home/gregorio/git/Engine2D/GamePanel.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Color.cpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Rect.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Font_ttf.hpp</file>
             <file>file:/home/gregorio/git/Engine2D/Scene.cpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Font_tff.hpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Font_tff.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/AL.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Vector2f.cpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Texture.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/GamePanel.hpp</file>
             <file>file:/home/gregorio/git/Engine2D/MenuScene.hpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Vector2f.hpp</file>
-            <file>file:/home/gregorio/git/Engine2D/Color.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/main.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Camera.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/GamePlay.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Sprite.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Collision.hpp</file>
-            <file>file:/home/gregorio/git/Engine2D/MenuScene.cpp</file>
             <file>file:/home/gregorio/git/Engine2D/Sprite.hpp</file>
             <file>file:/home/gregorio/git/Engine2D/Scene.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Font_ttf.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Texture.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/ResourceLoader.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Collision.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Camera.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Texture.cpp</file>
+            <file>file:/home/gregorio/git/Engine2D/ResourceLoader.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Vector2f.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/Color.hpp</file>
+            <file>file:/home/gregorio/git/Engine2D/MenuScene.cpp</file>
         </group>
     </open-files>
 </project-private>

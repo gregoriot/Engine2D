@@ -35,17 +35,21 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/AL.o \
+	${OBJECTDIR}/Camera.o \
 	${OBJECTDIR}/Character.o \
 	${OBJECTDIR}/Collision.o \
 	${OBJECTDIR}/Color.o \
-	${OBJECTDIR}/Font_tff.o \
+	${OBJECTDIR}/Font_ttf.o \
+	${OBJECTDIR}/GL.o \
 	${OBJECTDIR}/GamePanel.o \
+	${OBJECTDIR}/GamePlay.o \
 	${OBJECTDIR}/MenuScene.o \
-	${OBJECTDIR}/Rect.o \
+	${OBJECTDIR}/ResourceLoader.o \
 	${OBJECTDIR}/Scene.o \
+	${OBJECTDIR}/Sound.o \
 	${OBJECTDIR}/Sprite.o \
 	${OBJECTDIR}/Texture.o \
-	${OBJECTDIR}/TextureLoader.o \
 	${OBJECTDIR}/Vector2f.o \
 	${OBJECTDIR}/main.o
 
@@ -64,7 +68,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lGL -lGLU -lGLEW -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf
+LDLIBSOPTIONS=-lGL -lGLU -lGLEW -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf -lopenal -lalut
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -73,6 +77,16 @@ LDLIBSOPTIONS=-lGL -lGLU -lGLEW -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/engine2d: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/engine2d ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/AL.o: AL.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AL.o AL.cpp
+
+${OBJECTDIR}/Camera.o: Camera.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Camera.o Camera.cpp
 
 ${OBJECTDIR}/Character.o: Character.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -89,30 +103,45 @@ ${OBJECTDIR}/Color.o: Color.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Color.o Color.cpp
 
-${OBJECTDIR}/Font_tff.o: Font_tff.cpp 
+${OBJECTDIR}/Font_ttf.o: Font_ttf.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Font_tff.o Font_tff.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Font_ttf.o Font_ttf.cpp
+
+${OBJECTDIR}/GL.o: GL.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GL.o GL.cpp
 
 ${OBJECTDIR}/GamePanel.o: GamePanel.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GamePanel.o GamePanel.cpp
 
+${OBJECTDIR}/GamePlay.o: GamePlay.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GamePlay.o GamePlay.cpp
+
 ${OBJECTDIR}/MenuScene.o: MenuScene.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MenuScene.o MenuScene.cpp
 
-${OBJECTDIR}/Rect.o: Rect.cpp 
+${OBJECTDIR}/ResourceLoader.o: ResourceLoader.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Rect.o Rect.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ResourceLoader.o ResourceLoader.cpp
 
 ${OBJECTDIR}/Scene.o: Scene.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Scene.o Scene.cpp
+
+${OBJECTDIR}/Sound.o: Sound.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Sound.o Sound.cpp
 
 ${OBJECTDIR}/Sprite.o: Sprite.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -123,11 +152,6 @@ ${OBJECTDIR}/Texture.o: Texture.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Texture.o Texture.cpp
-
-${OBJECTDIR}/TextureLoader.o: TextureLoader.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TextureLoader.o TextureLoader.cpp
 
 ${OBJECTDIR}/Vector2f.o: Vector2f.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -11,30 +11,38 @@
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="f2" displayName="Math Modulo" projectFiles="true">
+      <itemPath>Collision.cpp</itemPath>
+      <itemPath>Collision.hpp</itemPath>
       <itemPath>Color.cpp</itemPath>
       <itemPath>Color.hpp</itemPath>
-      <itemPath>Rect.cpp</itemPath>
-      <itemPath>Rect.hpp</itemPath>
       <itemPath>Vector2f.cpp</itemPath>
       <itemPath>Vector2f.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="f3" displayName="Resources" projectFiles="true">
-      <itemPath>Font_tff.cpp</itemPath>
-      <itemPath>Font_tff.hpp</itemPath>
+      <itemPath>Font_ttf.cpp</itemPath>
+      <itemPath>Font_ttf.hpp</itemPath>
+      <itemPath>ResourceLoader.cpp</itemPath>
+      <itemPath>ResourceLoader.hpp</itemPath>
+      <itemPath>Sound.cpp</itemPath>
+      <itemPath>Sound.hpp</itemPath>
       <itemPath>Texture.cpp</itemPath>
       <itemPath>Texture.hpp</itemPath>
-      <itemPath>TextureLoader.cpp</itemPath>
-      <itemPath>TextureLoader.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="f1" displayName="Scenes" projectFiles="true">
+      <itemPath>GamePlay.cpp</itemPath>
+      <itemPath>GamePlay.hpp</itemPath>
       <itemPath>MenuScene.cpp</itemPath>
       <itemPath>MenuScene.hpp</itemPath>
       <itemPath>Scene.cpp</itemPath>
       <itemPath>Scene.hpp</itemPath>
     </logicalFolder>
-    <logicalFolder name="f4" displayName="Utilities" projectFiles="true">
-      <itemPath>Collision.cpp</itemPath>
-      <itemPath>Collision.hpp</itemPath>
+    <logicalFolder name="f4" displayName="Utils" projectFiles="true">
+      <itemPath>AL.cpp</itemPath>
+      <itemPath>AL.hpp</itemPath>
+      <itemPath>Camera.cpp</itemPath>
+      <itemPath>Camera.hpp</itemPath>
+      <itemPath>GL.cpp</itemPath>
+      <itemPath>GL.hpp</itemPath>
       <itemPath>Sprite.cpp</itemPath>
       <itemPath>Sprite.hpp</itemPath>
     </logicalFolder>
@@ -72,9 +80,19 @@
             <linkerLibLibItem>SDL_image</linkerLibLibItem>
             <linkerLibLibItem>SDL_mixer</linkerLibLibItem>
             <linkerLibLibItem>SDL_ttf</linkerLibLibItem>
+            <linkerLibLibItem>openal</linkerLibLibItem>
+            <linkerLibLibItem>alut</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="AL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Camera.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Camera.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Character.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Character.hpp" ex="false" tool="3" flavor2="0">
@@ -87,25 +105,37 @@
       </item>
       <item path="Color.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Font_tff.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Font_ttf.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Font_tff.hpp" ex="false" tool="3" flavor2="0">
+      <item path="Font_ttf.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GL.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GamePanel.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GamePanel.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GamePlay.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GamePlay.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MenuScene.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MenuScene.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Rect.cpp" ex="false" tool="1" flavor2="0">
+      <item path="ResourceLoader.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Rect.hpp" ex="false" tool="3" flavor2="0">
+      <item path="ResourceLoader.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Scene.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Scene.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sound.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sound.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Sprite.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -114,10 +144,6 @@
       <item path="Texture.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Texture.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TextureLoader.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TextureLoader.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Vector2f.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -146,6 +172,14 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="AL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Camera.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Camera.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Character.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Character.hpp" ex="false" tool="3" flavor2="0">
@@ -158,25 +192,37 @@
       </item>
       <item path="Color.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Font_tff.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Font_ttf.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Font_tff.hpp" ex="false" tool="3" flavor2="0">
+      <item path="Font_ttf.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GL.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GamePanel.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GamePanel.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GamePlay.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GamePlay.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MenuScene.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MenuScene.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Rect.cpp" ex="false" tool="1" flavor2="0">
+      <item path="ResourceLoader.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Rect.hpp" ex="false" tool="3" flavor2="0">
+      <item path="ResourceLoader.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Scene.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Scene.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sound.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sound.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Sprite.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -185,10 +231,6 @@
       <item path="Texture.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Texture.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TextureLoader.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TextureLoader.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Vector2f.cpp" ex="false" tool="1" flavor2="0">
       </item>

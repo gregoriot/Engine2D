@@ -1,32 +1,31 @@
 /* 
- * File:   MenuScene.hpp
+ * File:   GamePlay.hpp
  * Author: Gilvanei Gregório
  *
- * Created on 12 de Dezembro de 2013, 21:23
- * 
+ * Created on 10 de Janeiro de 2014, 17:22
+ *
  * Menu Scene is a scene of main menu game.
  */
 
-#ifndef MENUSCENE_HPP
-#define	MENUSCENE_HPP
+#ifndef GAMEPLAY_HPP
+#define	GAMEPLAY_HPP
 
 #include <SDL/SDL_events.h>
 #include <SDL/SDL_image.h>
 #include <SDL/SDL_ttf.h>
 
+#include "Scene.hpp"
 #include "GamePanel.hpp"
 #include "Scene.hpp"
 #include "Vector2f.hpp"
+#include "Character.hpp"
 #include "Font_ttf.hpp"
-#include "Texture.hpp"
-#include "Texture.hpp"
-#include "Collision.hpp"
 #include "ResourceLoader.hpp"
-#include "GamePlay.hpp"
+#include "Camera.hpp"
 
 #include <string>
 
-class MenuScene : public Scene {
+class GamePlay : public Scene{
 public:
     /** 
     * Constructor of class.
@@ -34,10 +33,10 @@ public:
     * @param GamePanel* 
     *    GL* gl
     */
-    MenuScene(GamePanel* _parent, GL* _gl, AL* _al);
+    GamePlay(GamePanel* _parent, GL* _gl, AL* _al);
     
     /** Default destructor.*/
-    virtual ~MenuScene();
+    virtual ~GamePlay();
     
     /** Init atributs of scenes.*/
     void init();
@@ -68,8 +67,9 @@ private:
     /** Font_ttf font.*/
     Font_ttf font;
     
-    /** Texture* mainMenuTex.*/
-    Texture* mainMenuTex;
+    /** Character* character.*/
+    Character* character;
 };
-#endif	/* MENUSCENE_HPP */
+
+#endif	/* GAMEPLAY_HPP */
 

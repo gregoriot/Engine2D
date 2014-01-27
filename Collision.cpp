@@ -1,10 +1,3 @@
-/* 
- * File:   Collision.cpp
- * Author: gregorio
- * 
- * Created on 2 de Janeiro de 2014, 20:37
- */
-
 #include "Collision.hpp"
 
 Collision::Collision() {
@@ -15,14 +8,14 @@ Collision::~Collision() {
     
 }
 
-bool Collision::boundingBox(Rect rectA, Rect rectB){
-     if(rectA.x > rectB.x+rectB.width)
+bool Collision::boundingBox(float x1, float y1, float w1, float h1, float x2, float y2, float w2, float h2){
+     if(x1 > x2+w2)
         return false;
-    if(rectA.x+rectA.width < rectB.x)
+    if(x1+w1 < x2)
         return false;
-    if(rectA.y > rectB.y+rectB.height)
+    if(y1 > y2+h2)
         return false;
-    if(rectA.y+rectA.height < rectB.y)
+    if(y1+h1 < y2)
         return false;
     
     return true;
@@ -37,8 +30,8 @@ bool Collision::circular(float x1, float y1, float r1, float x2, float y2, float
     return false;
 }
 
-bool Collision::circular(Sprite* s1 , Sprite* s2){
-    if(sqrt(pow(s1->x-s2->x, 2) + pow(s1->y-s2->y, 2)) <= (s1->radius + s2->radius))
+bool Collision::circular(Sprite* sprite1 , Sprite* sprite2){
+    if(sqrt(pow(sprite1->x-sprite2->x, 2) + pow(sprite1->y-sprite2->y, 2)) <= (sprite1->radius + sprite2->radius))
 			return true;
 		
 		return false;

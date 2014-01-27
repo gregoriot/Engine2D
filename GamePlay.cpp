@@ -1,6 +1,6 @@
-#include "MenuScene.hpp"
+#include "GamePlay.hpp"
 
-MenuScene::MenuScene(GamePanel* _parent, GL* _gl, AL* _al) {
+GamePlay::GamePlay(GamePanel* _parent, GL* _gl, AL* _al) {
     parent = _parent;
     gl = _gl;
     al =_al;
@@ -12,16 +12,17 @@ MenuScene::MenuScene(GamePanel* _parent, GL* _gl, AL* _al) {
     camera->init(0,0);
 }
 
-MenuScene::~MenuScene() {
+GamePlay::~GamePlay() {
     
 }
 
-void MenuScene::init(){
+void GamePlay::init(){
+   character = new Character();
+   character->init(0,0, 2, 8, ResourceLoader::PNG("Assets/youKnowHow.png"), gl, al);
    font.init("Fonts/iwantv2.ttf", 36, FONT_TTF_NORMAL);
-   mainMenuTex = ResourceLoader::JPG("Assets/main_menu.jpg");
 }
-    
-void MenuScene::input(SDL_Event& e){
+
+void GamePlay::input(SDL_Event& e){
     while (SDL_PollEvent(&e)) {
         //Windowns Close Button.
         if(e.type == SDL_QUIT){
@@ -45,13 +46,8 @@ void MenuScene::input(SDL_Event& e){
         
         //Mouse button was release.
         if(e.type == SDL_MOUSEBUTTONUP){
-            if(e.button.button == SDL_BUTTON_LEFT ){             
-                if(Collision::boundingBox(width*0.09f, height*0.15f, width*0.32f, height*0.25f, e.button.x, e.button.y, 1, 1)){
-                    parent->currentScene = new GamePlay(parent, gl, al);
-                    parent->currentScene->init();                
-                }
-                if(Collision::boundingBox(width*0.09f, height*0.8f, width*0.32f, height*0.9f, e.button.x, e.button.y, 1, 1))
-                    parent->run = false;
+            if(e.button.button == SDL_BUTTON_LEFT ){
+                ;
             }
         }
         
@@ -76,23 +72,23 @@ void MenuScene::input(SDL_Event& e){
     }
 }
 
-void MenuScene::update(long difTime){
-
+void GamePlay::update(long difTime){
+    character->update(difTime);
 }
 
-void MenuScene::render(){
+void GamePlay::render(){
     gl->beginRender2D();
     gl->enableTexture2D();
     
-    gl->render2D(mainMenuTex, 0, 0, width, height);
+    character->render();
     
     font.color = new Color(1,0,0,1);
-    font.render("Start", width * 0.14f, height *0.17f);
-    font.render("Exit", width * 0.14f, height *0.825f);
+    font.render("jhk", width * 0.14f, height *0.17f);
 
     gl->disableTexture2D();
     gl->endRender2D();
-    
+
     //Update screen
     SDL_GL_SwapBuffers();
 }
+
