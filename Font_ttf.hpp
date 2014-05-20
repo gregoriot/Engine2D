@@ -26,6 +26,11 @@
 
 class Font_ttf{
 public:
+    /** Size of font.*/
+    float size;
+    /** Color of font.*/
+    Color* color;
+    
     /** Default constructor.*/
     Font_ttf();
     
@@ -59,11 +64,7 @@ public:
     *    iny y position
     */
     void render(const char* text, float x, float y);
-    
-    /** Size of font.*/
-    float size;
-    /** Color of font.*/
-    Color* color;
+
 private:
     /** Font in SDL context.*/
     TTF_Font* font = NULL;

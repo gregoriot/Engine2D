@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="90">
+<configurationDescriptor version="94">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="f5" displayName="Characters" projectFiles="true">
       <itemPath>Character.cpp</itemPath>
@@ -21,12 +21,18 @@
     <logicalFolder name="f3" displayName="Resources" projectFiles="true">
       <itemPath>Font_ttf.cpp</itemPath>
       <itemPath>Font_ttf.hpp</itemPath>
-      <itemPath>ResourceLoader.cpp</itemPath>
-      <itemPath>ResourceLoader.hpp</itemPath>
       <itemPath>Sound.cpp</itemPath>
       <itemPath>Sound.hpp</itemPath>
+      <itemPath>SoundManager.cpp</itemPath>
+      <itemPath>SoundManager.hpp</itemPath>
       <itemPath>Texture.cpp</itemPath>
       <itemPath>Texture.hpp</itemPath>
+      <itemPath>TextureManager.cpp</itemPath>
+      <itemPath>TextureManager.hpp</itemPath>
+      <itemPath>TileMap.cpp</itemPath>
+      <itemPath>TileMap.hpp</itemPath>
+      <itemPath>TileMapManager.cpp</itemPath>
+      <itemPath>TileMapManager.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="f1" displayName="Scenes" projectFiles="true">
       <itemPath>GamePlay.cpp</itemPath>
@@ -45,6 +51,8 @@
       <itemPath>GL.hpp</itemPath>
       <itemPath>Sprite.cpp</itemPath>
       <itemPath>Sprite.hpp</itemPath>
+      <itemPath>StringSplit.cpp</itemPath>
+      <itemPath>StringSplit.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Arquivos de Teste"
@@ -74,14 +82,14 @@
         <linkerTool>
           <linkerLibItems>
             <linkerLibLibItem>GL</linkerLibLibItem>
-            <linkerLibLibItem>GLU</linkerLibLibItem>
             <linkerLibLibItem>GLEW</linkerLibLibItem>
+            <linkerLibLibItem>GLU</linkerLibLibItem>
             <linkerLibLibItem>SDL</linkerLibLibItem>
             <linkerLibLibItem>SDL_image</linkerLibLibItem>
             <linkerLibLibItem>SDL_mixer</linkerLibLibItem>
             <linkerLibLibItem>SDL_ttf</linkerLibLibItem>
-            <linkerLibLibItem>openal</linkerLibLibItem>
             <linkerLibLibItem>alut</linkerLibLibItem>
+            <linkerLibLibItem>openal</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -125,10 +133,6 @@
       </item>
       <item path="MenuScene.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="ResourceLoader.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ResourceLoader.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Scene.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Scene.hpp" ex="false" tool="3" flavor2="0">
@@ -137,13 +141,33 @@
       </item>
       <item path="Sound.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="SoundManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SoundManager.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Sprite.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Sprite.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="StringSplit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringSplit.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Texture.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Texture.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TextureManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextureManager.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TileMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileMap.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TileMapManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileMapManager.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Vector2f.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -212,10 +236,6 @@
       </item>
       <item path="MenuScene.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="ResourceLoader.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ResourceLoader.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Scene.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Scene.hpp" ex="false" tool="3" flavor2="0">
@@ -224,13 +244,33 @@
       </item>
       <item path="Sound.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="SoundManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SoundManager.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Sprite.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Sprite.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="StringSplit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringSplit.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Texture.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Texture.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TextureManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextureManager.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TileMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileMap.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TileMapManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileMapManager.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Vector2f.cpp" ex="false" tool="1" flavor2="0">
       </item>

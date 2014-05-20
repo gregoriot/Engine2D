@@ -1,4 +1,5 @@
 #include "MenuScene.hpp"
+#include "TextureManager.hpp"
 
 MenuScene::MenuScene(GamePanel* _parent, GL* _gl, AL* _al) {
     parent = _parent;
@@ -18,7 +19,7 @@ MenuScene::~MenuScene() {
 
 void MenuScene::init(){
    font.init("Fonts/iwantv2.ttf", 36, FONT_TTF_NORMAL);
-   mainMenuTex = ResourceLoader::JPG("Assets/main_menu.jpg");
+   mainMenuTex = TextureManager::loadJPG("Assets/main_menu.jpg");
 }
     
 void MenuScene::input(SDL_Event& e){

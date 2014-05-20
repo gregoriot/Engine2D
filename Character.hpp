@@ -20,6 +20,13 @@
 
 class Character : public Sprite {
 public:
+    /** Texture* texture.*/
+    Texture* texture;
+    
+    /** Sound* sound.*/
+    Sound* sound;
+    
+    
     /** Default constructor.*/
     Character();
     
@@ -46,11 +53,6 @@ public:
     /** Render the character in your position.*/
     void render();
     
-    /** Texture* texture.*/
-    Texture* texture;
-    
-    /** Sound* sound.*/
-    Sound* sound;
 private:
     /** GL* gl;.*/
     GL* gl;

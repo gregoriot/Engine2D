@@ -21,7 +21,7 @@
 #include "Texture.hpp"
 #include "Texture.hpp"
 #include "Collision.hpp"
-#include "ResourceLoader.hpp"
+#include "TextureManager.hpp"
 #include "GamePlay.hpp"
 
 #include <string>

@@ -20,8 +20,9 @@
 #include "Vector2f.hpp"
 #include "Character.hpp"
 #include "Font_ttf.hpp"
-#include "ResourceLoader.hpp"
+#include "TextureManager.hpp"
 #include "Camera.hpp"
+#include "TileMap.hpp"
 
 #include <string>
 
@@ -69,6 +70,9 @@ private:
     
     /** Character* character.*/
     Character* character;
+    
+    /** TileMap* tileMap.*/
+    TileMap* tileMap;
 };
 
 #endif	/* GAMEPLAY_HPP */

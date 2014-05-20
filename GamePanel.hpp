@@ -52,6 +52,9 @@ public:
     /**Variable that control game is running.*/
     bool run;
     
+    /**Frames per seconds.*/
+    int fps;
+    
     /**Current scene running.*/
     Scene* currentScene;
     
@@ -81,9 +84,6 @@ private:
     
     /**Count timer of system.*/
     int countTimer;
-    
-    /**Frames per seconds.*/
-    int fps;
     
     /**Count of frames per seconds.*/
     int sfps;

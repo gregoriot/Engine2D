@@ -1,4 +1,7 @@
 #include "GamePlay.hpp"
+#include "GamePanel.hpp"
+#include "TileMapManager.hpp"
+#include <stdlib.h>
 
 GamePlay::GamePlay(GamePanel* _parent, GL* _gl, AL* _al) {
     parent = _parent;
@@ -18,8 +21,10 @@ GamePlay::~GamePlay() {
 
 void GamePlay::init(){
    character = new Character();
-   character->init(0,0, 2, 8, ResourceLoader::PNG("Assets/youKnowHow.png"), gl, al);
+   character->init(0,0, 2, 8, TextureManager::loadPNG("Assets/youKnowHow.png"), gl, al);
    font.init("Fonts/iwantv2.ttf", 36, FONT_TTF_NORMAL);
+   
+   tileMap = TileMapManager::load("Assets/tilemap.txt", TextureManager::loadPNG("Assets/tileset.png"));
 }
 
 void GamePlay::input(SDL_Event& e){
@@ -80,10 +85,13 @@ void GamePlay::render(){
     gl->beginRender2D();
     gl->enableTexture2D();
     
+    tileMap->render();
     character->render();
     
+    char buff[10];
+    sprintf(buff, "%d", parent->fps);
     font.color = new Color(1,0,0,1);
-    font.render("jhk", width * 0.14f, height *0.17f);
+    font.render(buff, width * 0.14f, height *0.17f);
 
     gl->disableTexture2D();
     gl->endRender2D();

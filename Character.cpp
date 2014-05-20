@@ -1,5 +1,6 @@
 #include "Character.hpp"
-#include "ResourceLoader.hpp"
+#include "TextureManager.hpp"
+#include "SoundManager.hpp"
 
 Character::Character() {
     
@@ -31,7 +32,7 @@ void Character::init(float _x, float _y, int _numberAnimations, int _numberFrame
     frameProp = 1.f/numberFrames;
     animationProp = 1.f/numberAnimations;
     
-    sound = ResourceLoader::WAV("Assets/test.wav");
+    sound = SoundManager::loadWAV("Assets/test.wav");
     
     gl = _gl;
     al = _al;
@@ -40,7 +41,7 @@ void Character::init(float _x, float _y, int _numberAnimations, int _numberFrame
 void Character::update(long difTime){
      frameTimer += difTime;
      currentFrame = (frameTimer/timeBetweenFrames)%numberFrames;
-     alSourcePlay(sound->source);
+//     alSourcePlay(sound->source);
 }
 
 void Character::render(){

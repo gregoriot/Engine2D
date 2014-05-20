@@ -76,8 +76,8 @@ void GamePanel::mainLoop(){
         countTimer+= difTime;
         if(countTimer>1000){
             countTimer -= 1000;
-            sfps = 0;
             fps = sfps;
+            sfps = 0;
         }else{
             sfps ++;
         }

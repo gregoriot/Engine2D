@@ -45,11 +45,15 @@ OBJECTFILES= \
 	${OBJECTDIR}/GamePanel.o \
 	${OBJECTDIR}/GamePlay.o \
 	${OBJECTDIR}/MenuScene.o \
-	${OBJECTDIR}/ResourceLoader.o \
 	${OBJECTDIR}/Scene.o \
 	${OBJECTDIR}/Sound.o \
+	${OBJECTDIR}/SoundManager.o \
 	${OBJECTDIR}/Sprite.o \
+	${OBJECTDIR}/StringSplit.o \
 	${OBJECTDIR}/Texture.o \
+	${OBJECTDIR}/TextureManager.o \
+	${OBJECTDIR}/TileMap.o \
+	${OBJECTDIR}/TileMapManager.o \
 	${OBJECTDIR}/Vector2f.o \
 	${OBJECTDIR}/main.o
 
@@ -128,11 +132,6 @@ ${OBJECTDIR}/MenuScene.o: MenuScene.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MenuScene.o MenuScene.cpp
 
-${OBJECTDIR}/ResourceLoader.o: ResourceLoader.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ResourceLoader.o ResourceLoader.cpp
-
 ${OBJECTDIR}/Scene.o: Scene.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -143,15 +142,40 @@ ${OBJECTDIR}/Sound.o: Sound.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Sound.o Sound.cpp
 
+${OBJECTDIR}/SoundManager.o: SoundManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SoundManager.o SoundManager.cpp
+
 ${OBJECTDIR}/Sprite.o: Sprite.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Sprite.o Sprite.cpp
 
+${OBJECTDIR}/StringSplit.o: StringSplit.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StringSplit.o StringSplit.cpp
+
 ${OBJECTDIR}/Texture.o: Texture.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Texture.o Texture.cpp
+
+${OBJECTDIR}/TextureManager.o: TextureManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TextureManager.o TextureManager.cpp
+
+${OBJECTDIR}/TileMap.o: TileMap.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TileMap.o TileMap.cpp
+
+${OBJECTDIR}/TileMapManager.o: TileMapManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TileMapManager.o TileMapManager.cpp
 
 ${OBJECTDIR}/Vector2f.o: Vector2f.cpp 
 	${MKDIR} -p ${OBJECTDIR}

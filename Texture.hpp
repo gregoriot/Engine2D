@@ -13,20 +13,23 @@
 #include "SDL/SDL_opengl.h"
 class Texture {
 public:
+    /** Id of texture in OpenGL context.*/
+    unsigned int id;
+    
+    /** Sprite size in pixels.*/
+    int width;
+    int height;
+    
+    /** Texture size in porcents.*/
+    float propX;
+    float propY;
+    
     /** Default constructor.*/
     Texture();
     
     /** Default destructor.*/
     virtual ~Texture();
     
-    /** Id of texture in OpenGL context.*/
-    unsigned int id;
-    
-    /** Width sprite in pixel.*/
-    float width;
-    
-    /** Height sprite in pixel.*/
-    float height;
 private:
 };
 

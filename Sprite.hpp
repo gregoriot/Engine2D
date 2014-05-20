@@ -15,6 +15,19 @@
 
 class Sprite {
 public:
+    /** Position in world.*/
+    float x;
+    float y;
+    
+    /** Sprite size in pixels.*/
+    float width;
+    float height;
+    float radius;
+    
+    /** Reports the states od sprite.*/
+    bool active;
+    
+    
     /** Default constructor.*/
     Sprite();
     
@@ -29,21 +42,6 @@ public:
     
     /** Abstract method. Render the game in screen.*/
     virtual void render() = 0;
-    
-    /** Position x in world.*/
-    float x;
-    /** Position y in world.*/
-    float y;
-    
-    /** Width sprite in pixel.*/
-    float width;
-    /** Height sprite in pixel.*/
-    float height;
-    /** Radius sprite in pixel.*/
-    float radius;
-    
-    /** Reports the states od sprite.*/
-    bool active;
 protected:
 private:
 };
