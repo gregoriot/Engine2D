@@ -14,55 +14,38 @@ void GL::initOpenGL(int _width, int _height){
     height = _height;
     ratio = ((float) width / (float) height);
     
-    glClearColor(0.f, 0.f, 0.f, 0.f);
-    glClearDepth(1.f);
-    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LEQUAL);
-    glShadeModel(GL_SMOOTH);
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
-    
-    //Set View
-    glViewport(0, 0, width, height);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluPerspective(45.f, ratio, .1f, 100.f);
-
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-}
-
-void GL::beginRender2D(){
-    //Clear color buffer
-     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+    //Init Projection Matrix
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glOrtho(0.0, width, height, 0.0, -1.0, 10.0);
-    
+
+    //Init ModelView Matrix
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     
-    //Disable depth.
-    glDisable(GL_CULL_FACE);
-    glClear(GL_DEPTH_BUFFER_BIT);
-        
-    //Enable transparency and translucency.
-    glEnable (GL_BLEND);
-    glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    // Init clear color
+    glClearColor(0.f, 0.f, 0.f, 0.f);
+}
 
-    glColor4f(1,1,1,1);
+void GL::beginRender2D(){
+    
 }
 
 void GL::endRender2D(){
-    glMatrixMode(GL_PROJECTION);
-    glMatrixMode(GL_MODELVIEW); 
+    
 }
 
 void GL::enableTexture2D(){
+    //Enable transparency and translucency.
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
     glEnable(GL_TEXTURE_2D);
 }
 
 void GL::disableTexture2D(){
+    glDisable(GL_BLEND);
+    
     glDisable(GL_TEXTURE_2D);
 }
 

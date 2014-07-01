@@ -12,9 +12,8 @@
 #define	SCENE_HPP
 
 #include <SDL/SDL_events.h>
-
-#include "GL.hpp"
 #include "AL.hpp"
+#include "GL.hpp"
 
 class Scene {
 public:

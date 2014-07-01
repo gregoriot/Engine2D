@@ -8,9 +8,8 @@
 #ifndef AL_HPP
 #define	AL_HPP
 
-#include<AL/al.h>
-#include<AL/alut.h>
-
+#include <AL/al.h>
+#include <AL/alut.h>
 #include <stddef.h>
 
 class AL {

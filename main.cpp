@@ -9,11 +9,11 @@
 
 #include "GamePanel.hpp"
 
-using namespace std;
-
 int main() {
+    
+    //Create and init game system
     GamePanel gamePanel;
-    gamePanel.init();
+    gamePanel.init(800, 600, 16);
     
     return 0;
 }

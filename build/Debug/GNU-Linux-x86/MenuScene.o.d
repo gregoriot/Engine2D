@@ -1,38 +1,47 @@
 build/Debug/GNU-Linux-x86/MenuScene.o: MenuScene.cpp MenuScene.hpp \
- GamePanel.hpp Scene.hpp GL.hpp Texture.hpp AL.hpp Sound.hpp Vector2f.hpp \
- Font_ttf.hpp Color.hpp Collision.hpp Sprite.hpp TextureManager.hpp \
- GamePlay.hpp Character.hpp Camera.hpp TileMap.hpp
+ Collision.hpp Sprite.hpp Texture.hpp TextureCoord.h VertexPos2f.h \
+ Font_ttf.hpp Color.hpp GamePanel.hpp AL.hpp GL.hpp Scene.hpp Sound.hpp \
+ GamePlay.hpp Camera.hpp Character.hpp SoundLoad.hpp TextureLoad.hpp \
+ Tiled.hpp StringSplit.hpp TileMap.hpp
 
 MenuScene.hpp:
-
-GamePanel.hpp:
-
-Scene.hpp:
-
-GL.hpp:
-
-Texture.hpp:
-
-AL.hpp:
-
-Sound.hpp:
-
-Vector2f.hpp:
-
-Font_ttf.hpp:
-
-Color.hpp:
 
 Collision.hpp:
 
 Sprite.hpp:
 
-TextureManager.hpp:
+Texture.hpp:
+
+TextureCoord.h:
+
+VertexPos2f.h:
+
+Font_ttf.hpp:
+
+Color.hpp:
+
+GamePanel.hpp:
+
+AL.hpp:
+
+GL.hpp:
+
+Scene.hpp:
+
+Sound.hpp:
 
 GamePlay.hpp:
 
+Camera.hpp:
+
 Character.hpp:
 
-Camera.hpp:
+SoundLoad.hpp:
+
+TextureLoad.hpp:
+
+Tiled.hpp:
+
+StringSplit.hpp:
 
 TileMap.hpp:

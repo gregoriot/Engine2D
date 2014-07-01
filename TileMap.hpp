@@ -1,6 +1,3 @@
-#include "Texture.hpp"
-#include <vector>
-
 /* 
  * File:   TileMap.hpp
  * Author: gustavo
@@ -11,40 +8,51 @@
 #ifndef TILEMAP_HPP
 #define	TILEMAP_HPP
 
-class TileMap {
-    public:
-        
-        /* Texture group */
-        Texture* tileSet;
-        unsigned int qtdXTexture;
-        unsigned int qtdYTexture;
-        
-        /* Tile group*/
-        std::vector <int**> layers;
-        unsigned int tileSizeX;
-        unsigned int tileSizeY;
-        unsigned int qtdX;
-        unsigned int qtdY;
-        
-        /* */
-        unsigned int width;
-        unsigned int height;
-        
-        /* */
-        unsigned int bufferId;
-        
-        /** Default constructor.*/
-        TileMap();
+#include <GL/glew.h>
+#include <vector>
+#include "Texture.hpp"
+#include "VertexPos2f.h"
 
-        /** Default destructor.*/
-        virtual ~TileMap();
-        
-        /* */
-        void init();
-        
-        void render();
-        
-    private:
+class TileMap {
+public:
+    /* Buffers */
+    GLuint indiceBuffer;
+    GLuint vertexBuffer;
+    GLuint texCoordBuffer;
+    int qtdTiles;
+
+    /* Texture group */
+    Texture* tileSet;
+    int qtdXTexture;
+    int qtdYTexture;
+
+    /* Tile group*/
+    std::vector <int**> layers;
+    int tileSizeX;
+    int tileSizeY;
+    int qtdX;
+    int qtdY;
+
+    /* TileMap size in pixels */
+    int width;
+    int height;
+
+    /** Default constructor.*/
+    TileMap();
+
+    /** Default destructor.*/
+    virtual ~TileMap();
+
+    /* */
+    void init();
+
+    /** */
+    void initBuffers();
+
+    void render();
+    
+private:
+    
 };
 
 #endif	/* TILEMAP_HPP */

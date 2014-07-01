@@ -1,5 +1,4 @@
 #include "MenuScene.hpp"
-#include "TextureManager.hpp"
 
 MenuScene::MenuScene(GamePanel* _parent, GL* _gl, AL* _al) {
     parent = _parent;
@@ -11,15 +10,20 @@ MenuScene::MenuScene(GamePanel* _parent, GL* _gl, AL* _al) {
     
     camera = new Camera();
     camera->init(0,0);
+    
+    gl->beginRender2D();
+    gl->enableTexture2D();
 }
 
 MenuScene::~MenuScene() {
-    
+    gl->endRender2D();
+    gl->disableTexture2D();
 }
 
 void MenuScene::init(){
-   font.init("Fonts/iwantv2.ttf", 36, FONT_TTF_NORMAL);
-   mainMenuTex = TextureManager::loadJPG("Assets/main_menu.jpg");
+    font = Font_ttf();
+    font.init("Fonts/iwantv2.ttf", 36, FONT_TTF_NORMAL);
+    mainMenuTex = TextureLoad::JPG("Assets/main_menu.jpg");
 }
     
 void MenuScene::input(SDL_Event& e){
@@ -82,18 +86,9 @@ void MenuScene::update(long difTime){
 }
 
 void MenuScene::render(){
-    gl->beginRender2D();
-    gl->enableTexture2D();
-    
     gl->render2D(mainMenuTex, 0, 0, width, height);
     
     font.color = new Color(1,0,0,1);
     font.render("Start", width * 0.14f, height *0.17f);
     font.render("Exit", width * 0.14f, height *0.825f);
-
-    gl->disableTexture2D();
-    gl->endRender2D();
-    
-    //Update screen
-    SDL_GL_SwapBuffers();
 }

@@ -8,24 +8,22 @@
  * resource loading for the game.
  */
 
-#ifndef SOUNDMANAGER_HPP
-#define	SOUNDMANAGER_HPP
+#ifndef SOUNDLOAD_HPP
+#define	SOUNDLOAD_HPP
 
 #include <AL/al.h>
 #include <AL/alut.h>
-
+#include <iostream>
 #include "Sound.hpp"
 
-#include <iostream>
-
-class SoundManager {
+class SoundLoad {
 public:
     
     /** Default constructor.*/
-    SoundManager();
+    SoundLoad();
         
     /** Default destructor.*/
-    virtual ~SoundManager();
+    virtual ~SoundLoad();
     
     /* 
     * Static function that load a sound 
@@ -34,11 +32,11 @@ public:
     * @param const char* filePath
     * @return Sound* sound  
     */
-    static Sound* loadWAV(const char* filePath);
+    static Sound* WAV(const char* filePath);
     
     
 private:
 };
 
-#endif	/* SOUNDMANAGER_HPP */
+#endif	/* SOUNDLOAD_HPP */
 

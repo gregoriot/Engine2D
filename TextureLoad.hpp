@@ -11,21 +11,17 @@
 #ifndef TEXTUREMANAGER_HPP
 #define	TEXTUREMANAGER_HPP
 
-#include <SDL/SDL_opengl.h>
 #include <SDL/SDL_image.h>
-
 #include "Texture.hpp"
 
-#include <iostream>
-
-class TextureManager {
+class TextureLoad {
 public:
     
     /** Default constructor.*/
-    TextureManager();
+    TextureLoad();
         
     /** Default destructor.*/
-    virtual ~TextureManager();
+    virtual ~TextureLoad();
     
     /* 
     * Static function that load a image 
@@ -34,7 +30,7 @@ public:
     * @param const char* filePath
     * @return Texture* texture  
     */
-    static Texture* loadBMP_16B(const char* filePath);
+    static Texture* BMP_16B(const char* filePath);
     
     /* 
     * Static function that load a image 
@@ -43,7 +39,7 @@ public:
     * @param const char* filePath
     * @return Texture* texture  
     */
-    static Texture* loadBMP_24B(const char* filePath); //Need Fix the colors are inverted.
+    static Texture* BMP_24B(const char* filePath); //Need Fix the colors are inverted.
     
     /* 
     * Static function that load a image 
@@ -52,7 +48,7 @@ public:
     * @param const char* filePath
     * @return Texture* texture  
     */
-    static Texture* loadBMP_32B(const char* filePath);
+    static Texture* BMP_32B(const char* filePath);
     
     /* 
     * Static function that load a image 
@@ -61,7 +57,7 @@ public:
     * @param const char* filePath
     * @return Texture* texture  
     */
-    static Texture* loadJPG(const char* filePath);
+    static Texture* JPG(const char* filePath);
     
     /* 
     * Static function that load a image 
@@ -70,7 +66,7 @@ public:
     * @param const char* filePath
     * @return Texture* texture  
     */
-    static Texture* loadPNG(const char* filePath);
+    static Texture* PNG(const char* filePath);
     
     
 private:
@@ -82,7 +78,7 @@ private:
     * @param const char* filePath
     * @return Texture* texture  
     */
-    static Texture* texturePrepare(SDL_Surface* surface);
+    static Texture* prepare(SDL_Surface* surface);
 };
 
 #endif	/* TEXTUREMANAGER_HPP */

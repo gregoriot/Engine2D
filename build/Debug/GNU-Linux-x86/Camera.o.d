@@ -1,5 +1,5 @@
-build/Debug/GNU-Linux-x86/Camera.o: Camera.cpp Camera.hpp Vector2f.hpp
+build/Debug/GNU-Linux-x86/Camera.o: Camera.cpp Camera.hpp VertexPos2f.h
 
 Camera.hpp:
 
-Vector2f.hpp:
+VertexPos2f.h:

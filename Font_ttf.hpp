@@ -11,12 +11,10 @@
 #ifndef FONT_TTF_HPP
 #define	FONT_TTF_HPP
 
-#include <SDL/SDL_opengl.h>
 #include <SDL/SDL_ttf.h>
-
-#include "Color.hpp"
-
+#include <GL/gl.h>
 #include <iostream>
+#include "Color.hpp"
 
 #define FONT_TTF_NORMAL 0
 #define FONT_TTF_BOLD 1
@@ -67,7 +65,7 @@ public:
 
 private:
     /** Font in SDL context.*/
-    TTF_Font* font = NULL;
+    TTF_Font* font;
     /** File Path of font.*/
     const char* filePath;
 };

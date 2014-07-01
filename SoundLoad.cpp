@@ -1,21 +1,21 @@
-#include "SoundManager.hpp"
+#include "SoundLoad.hpp"
 
-SoundManager::SoundManager() {
+SoundLoad::SoundLoad() {
     
 }
 
-SoundManager::~SoundManager() {
+SoundLoad::~SoundLoad() {
     
 }
 
-Sound* SoundManager::loadWAV(const char* filePath){
+Sound* SoundLoad::WAV(const char* filePath){
     Sound* sound = new Sound();
 
 	// Load wav data into a buffer.
 	alGenBuffers(1, &sound->buffer);
 
 	if(alGetError() != AL_NO_ERROR)
-		std::cout<<"ERROR GEN BUFFER";
+            std::cout<<"ERROR GEN BUFFER";
 
     //Load wav file with alut.
 	alutLoadWAVFile((ALbyte*)filePath, &sound->format, &sound->data, &sound->size, &sound->freq, &sound->loop);
@@ -26,7 +26,7 @@ Sound* SoundManager::loadWAV(const char* filePath){
 	alGenSources(1, &sound->source);
 
 	if(alGetError() != AL_NO_ERROR)
-		std::cout<<"ERROR GEN SOURCE";
+            std::cout<<"ERROR GEN SOURCE";
 
 	alSourcei (sound->source, AL_BUFFER,   sound->buffer);
 	alSourcef (sound->source, AL_PITCH,    1.0      );
@@ -37,7 +37,7 @@ Sound* SoundManager::loadWAV(const char* filePath){
 
 	// Do another error check and return.
 	if(alGetError() == AL_NO_ERROR)
-		std::cout<<"ERROR LOAD WAV";
+            std::cout<<"ERROR LOAD WAV";
     
     return sound;
 }

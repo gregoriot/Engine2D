@@ -1,8 +1,9 @@
-#include <iostream>
-#include <vector>
-
 #ifndef STRINGSPLIT_HPP
 #define	STRINGSPLIT_HPP
+
+#include <iostream>
+#include <vector>
+#include "sstream"
 
 class StringSplit {
 public:

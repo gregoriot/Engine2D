@@ -12,6 +12,6 @@ Sound::Sound() {
 
 Sound::~Sound() {
     alDeleteBuffers(1, &buffer);
-	alDeleteSources(1, &source);
+    alDeleteSources(1, &source);
 }
 
