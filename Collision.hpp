@@ -10,9 +10,8 @@
 #ifndef COLLISION_HPP
 #define	COLLISION_HPP
 
-#include "Sprite.hpp"
-
 #include <math.h>
+#include "Sprite.hpp"
 
 class Collision {
 public:

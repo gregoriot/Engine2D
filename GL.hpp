@@ -11,8 +11,7 @@
 #ifndef GL_HPP
 #define	GL_HPP
 
-#include<SDL/SDL_opengl.h>
-
+#include <GL/glew.h>
 #include "Texture.hpp"
 
 class GL {

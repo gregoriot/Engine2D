@@ -10,20 +10,22 @@
 #ifndef GAMEPLAY_HPP
 #define	GAMEPLAY_HPP
 
+#include <GL/glew.h>
 #include <SDL/SDL_events.h>
 #include <SDL/SDL_image.h>
 #include <SDL/SDL_ttf.h>
+#include <string>
 
-#include "Scene.hpp"
-#include "GamePanel.hpp"
-#include "Scene.hpp"
-#include "Vector2f.hpp"
+#include "Camera.hpp"
 #include "Character.hpp"
 #include "Font_ttf.hpp"
-#include "ResourceLoader.hpp"
-#include "Camera.hpp"
-
-#include <string>
+#include "GamePanel.hpp"
+#include "Scene.hpp"
+#include "Sprite.hpp"
+#include "TextureLoad.hpp"
+#include "Tiled.hpp"
+#include "TileMap.hpp"
+#include "VertexPos2f.h"
 
 class GamePlay : public Scene{
 public:
@@ -69,6 +71,13 @@ private:
     
     /** Character* character.*/
     Character* character;
+    
+    /** TileMap* tileMap.*/
+    TileMap* tileMap;
+    
+    Sprite* sprite;
+    
+    VertexPos2f position;
 };
 
 #endif	/* GAMEPLAY_HPP */

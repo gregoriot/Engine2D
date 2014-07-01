@@ -11,17 +11,12 @@
 #ifndef GAMEPANEL_HPP
 #define	GAMEPANEL_HPP
 
-#include "SDL/SDL.h"
-#include <SDL/SDL_opengl.h> //always after include glew, never before.
-#include <GL/glu.h>
-
-#include "Scene.hpp"
-#include "GL.hpp"
+#include <GL/glew.h>
+#include <SDL/SDL.h>
 #include "AL.hpp"
+#include "GL.hpp"
+#include "Scene.hpp"
 #include "Sound.hpp"
-
-#include <iostream>
-
 
 class GamePanel {
 public:
@@ -32,7 +27,7 @@ public:
     virtual ~GamePanel();
     
     /**Init all functions of class.*/ 
-    void init();
+    void init(int _width, int _height, int _bpp);
     
     /**Init all functions SDL.*/
     void initSDL();
@@ -42,6 +37,16 @@ public:
     * and treats inputs of scenes.
     */
     void mainLoop();
+    
+    /**
+    * Default render for all scenes.
+    */
+    void renderScene();
+    
+    /**
+    * Default update for all scenes.
+    */
+    void updateScene(SDL_Event& events);
 
     /**Width Screen.*/
     int width;
@@ -51,6 +56,9 @@ public:
      
     /**Variable that control game is running.*/
     bool run;
+    
+    /**Frames per seconds.*/
+    int fps;
     
     /**Current scene running.*/
     Scene* currentScene;
@@ -81,9 +89,6 @@ private:
     
     /**Count timer of system.*/
     int countTimer;
-    
-    /**Frames per seconds.*/
-    int fps;
     
     /**Count of frames per seconds.*/
     int sfps;

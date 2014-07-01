@@ -45,12 +45,15 @@ OBJECTFILES= \
 	${OBJECTDIR}/GamePanel.o \
 	${OBJECTDIR}/GamePlay.o \
 	${OBJECTDIR}/MenuScene.o \
-	${OBJECTDIR}/ResourceLoader.o \
 	${OBJECTDIR}/Scene.o \
 	${OBJECTDIR}/Sound.o \
+	${OBJECTDIR}/SoundLoad.o \
 	${OBJECTDIR}/Sprite.o \
+	${OBJECTDIR}/StringSplit.o \
 	${OBJECTDIR}/Texture.o \
-	${OBJECTDIR}/Vector2f.o \
+	${OBJECTDIR}/TextureLoad.o \
+	${OBJECTDIR}/TileMap.o \
+	${OBJECTDIR}/Tiled.o \
 	${OBJECTDIR}/main.o
 
 
@@ -68,7 +71,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lGL -lGLU -lGLEW -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf -lopenal -lalut
+LDLIBSOPTIONS=-lGL -lGLU -lopenal -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf -lalut -lglut -lGLEW
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -128,11 +131,6 @@ ${OBJECTDIR}/MenuScene.o: MenuScene.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MenuScene.o MenuScene.cpp
 
-${OBJECTDIR}/ResourceLoader.o: ResourceLoader.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ResourceLoader.o ResourceLoader.cpp
-
 ${OBJECTDIR}/Scene.o: Scene.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -143,20 +141,40 @@ ${OBJECTDIR}/Sound.o: Sound.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Sound.o Sound.cpp
 
+${OBJECTDIR}/SoundLoad.o: SoundLoad.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SoundLoad.o SoundLoad.cpp
+
 ${OBJECTDIR}/Sprite.o: Sprite.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Sprite.o Sprite.cpp
+
+${OBJECTDIR}/StringSplit.o: StringSplit.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StringSplit.o StringSplit.cpp
 
 ${OBJECTDIR}/Texture.o: Texture.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Texture.o Texture.cpp
 
-${OBJECTDIR}/Vector2f.o: Vector2f.cpp 
+${OBJECTDIR}/TextureLoad.o: TextureLoad.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Vector2f.o Vector2f.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TextureLoad.o TextureLoad.cpp
+
+${OBJECTDIR}/TileMap.o: TileMap.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TileMap.o TileMap.cpp
+
+${OBJECTDIR}/Tiled.o: Tiled.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Tiled.o Tiled.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

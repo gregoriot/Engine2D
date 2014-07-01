@@ -1,16 +1,21 @@
-build/Debug/GNU-Linux-x86/Character.o: Character.cpp Character.hpp \
- Sprite.hpp Texture.hpp Sound.hpp GL.hpp AL.hpp ResourceLoader.hpp
+build/Debug/GNU-Linux-x86/Character.o: Character.cpp Character.hpp AL.hpp \
+ GL.hpp Texture.hpp TextureCoord.h Sound.hpp Sprite.hpp VertexPos2f.h \
+ SoundLoad.hpp
 
 Character.hpp:
 
-Sprite.hpp:
-
-Texture.hpp:
-
-Sound.hpp:
+AL.hpp:
 
 GL.hpp:
 
-AL.hpp:
+Texture.hpp:
 
-ResourceLoader.hpp:
+TextureCoord.h:
+
+Sound.hpp:
+
+Sprite.hpp:
+
+VertexPos2f.h:
+
+SoundLoad.hpp:

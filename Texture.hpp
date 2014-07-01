@@ -10,24 +10,31 @@
 #ifndef TEXTURE_HPP
 #define	TEXTURE_HPP
 
-#include "SDL/SDL_opengl.h"
+
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include "TextureCoord.h"
+
 class Texture {
 public:
+    /** Id of texture in OpenGL context.*/
+    GLuint id;
+    
+    /** Texture size in pixels.*/
+    GLuint width;
+    GLuint height;
+    
+    /** Texture size in percents.*/
+    TextureCoord prop;
+    
     /** Default constructor.*/
     Texture();
     
     /** Default destructor.*/
     virtual ~Texture();
     
-    /** Id of texture in OpenGL context.*/
-    unsigned int id;
-    
-    /** Width sprite in pixel.*/
-    float width;
-    
-    /** Height sprite in pixel.*/
-    float height;
 private:
+    
 };
 
 #endif	/* TEXTURE_HPP */

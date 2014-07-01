@@ -4,49 +4,62 @@
  *
  * Created on 31 de Dezembro de 2013, 17:34
  * 
- * Abstract class sprite, draws, update.
+ * Class sprite, draws, update.
  */
 
 #ifndef SPRITE_HPP
 #define	SPRITE_HPP
 
+#include <GL/glew.h>
 #include "Texture.hpp"
-
+#include "VertexPos2f.h"
 
 class Sprite {
 public:
+    GLuint indiceBuffer;
+    GLuint vertexBuffer;
+    GLuint texCoordBuffer;
+    
+    /** Position in world.*/
+    VertexPos2f position;
+    
+    /** Texture of sprite. */
+    Texture* texture;
+    
+    /** Sprite size in pixels.*/
+    float radius;
+    
+    /** Reports the states of sprite.*/
+    bool active;
+    
     /** Default constructor.*/
     Sprite();
     
     /** Default destructor.*/
     virtual ~Sprite();
     
-    /** 
-     * Abstract method. Update the states of game.
-     * @param: long difTime, time difference between the bonds of the game
+    /* Init global position and texture image.
+     * 
+     * @param float x position
+     *    float y position
+     *    Texture* texture
      */
-    virtual void update(long difTime) = 0;
+    void init(float x, float y, Texture* _texture);
     
-    /** Abstract method. Render the game in screen.*/
-    virtual void render() = 0;
+    /** Init buffers for rendering */
+    void initBuffers();
     
-    /** Position x in world.*/
-    float x;
-    /** Position y in world.*/
-    float y;
+    /** 
+     * Update the states of game.
+     * 
+     * @param long difTime, time difference between the bonds of the game
+     */
+    void update(long difTime);
     
-    /** Width sprite in pixel.*/
-    float width;
-    /** Height sprite in pixel.*/
-    float height;
-    /** Radius sprite in pixel.*/
-    float radius;
-    
-    /** Reports the states od sprite.*/
-    bool active;
+    /** Render the game in screen.*/
+    void render();
 protected:
 private:
 };
 
 #endif	/* SPRITE_HPP */
-

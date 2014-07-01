@@ -12,9 +12,8 @@
 #define	SCENE_HPP
 
 #include <SDL/SDL_events.h>
-
-#include "GL.hpp"
 #include "AL.hpp"
+#include "GL.hpp"
 
 class Scene {
 public:
@@ -55,21 +54,18 @@ public:
     
     /** Abstract method. Render the game in screen.*/
     virtual void render() = 0;
-protected:
-    /** Width screen in pixel.*/
-    int width;
     
-    /** Height screen in pixel.*/
+protected:
+    /** Screen size in pixels.*/
+    int width;
     int height;
 
-    /** Current scene in use.*/
-    Scene* currentScene;
-    
     /** Object responsible for OpenGL.*/
     GL* gl;
     
     /** Object responsible for OpenAL.*/
     AL* al;
+    
 private:
 };
 

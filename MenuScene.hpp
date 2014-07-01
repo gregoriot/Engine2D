@@ -13,18 +13,16 @@
 #include <SDL/SDL_events.h>
 #include <SDL/SDL_image.h>
 #include <SDL/SDL_ttf.h>
-
-#include "GamePanel.hpp"
-#include "Scene.hpp"
-#include "Vector2f.hpp"
-#include "Font_ttf.hpp"
-#include "Texture.hpp"
-#include "Texture.hpp"
-#include "Collision.hpp"
-#include "ResourceLoader.hpp"
-#include "GamePlay.hpp"
-
 #include <string>
+
+#include "Collision.hpp"
+#include "Font_ttf.hpp"
+#include "GamePanel.hpp"
+#include "GamePlay.hpp"
+#include "Scene.hpp"
+#include "Texture.hpp"
+#include "TextureLoad.hpp"
+#include "VertexPos2f.h"
 
 class MenuScene : public Scene {
 public:

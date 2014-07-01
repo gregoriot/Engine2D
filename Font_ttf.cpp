@@ -1,11 +1,12 @@
 #include "Font_ttf.hpp"
 
 Font_ttf::Font_ttf() {
-     color = new Color();
+    font = NULL;
+    color = new Color();
 }
 
 Font_ttf::~Font_ttf() {
-    TTF_CloseFont( font );
+    TTF_CloseFont(font);
     TTF_Quit();
 }
 
@@ -38,7 +39,7 @@ void Font_ttf::render(const char* text, float x, float y){
 	SDL_Surface *messageSurface = TTF_RenderText_Blended(const_cast<TTF_Font*>(font), text, Color);
 	
     //Generate an OpenGL texture.
-    unsigned int Texture = 0;
+    GLuint Texture = 0;
 	glGenTextures(1, &Texture);
 	glBindTexture(GL_TEXTURE_2D, Texture);
  

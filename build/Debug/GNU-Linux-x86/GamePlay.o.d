@@ -1,32 +1,43 @@
-build/Debug/GNU-Linux-x86/GamePlay.o: GamePlay.cpp GamePlay.hpp Scene.hpp \
- GL.hpp Texture.hpp AL.hpp GamePanel.hpp Sound.hpp Vector2f.hpp \
- Character.hpp Sprite.hpp Font_ttf.hpp Color.hpp ResourceLoader.hpp \
- Camera.hpp
+build/Debug/GNU-Linux-x86/GamePlay.o: GamePlay.cpp GamePlay.hpp \
+ Camera.hpp VertexPos2f.h Character.hpp AL.hpp GL.hpp Texture.hpp \
+ TextureCoord.h Sound.hpp Sprite.hpp SoundLoad.hpp Font_ttf.hpp Color.hpp \
+ GamePanel.hpp Scene.hpp TextureLoad.hpp Tiled.hpp StringSplit.hpp \
+ TileMap.hpp
 
 GamePlay.hpp:
 
-Scene.hpp:
+Camera.hpp:
+
+VertexPos2f.h:
+
+Character.hpp:
+
+AL.hpp:
 
 GL.hpp:
 
 Texture.hpp:
 
-AL.hpp:
-
-GamePanel.hpp:
+TextureCoord.h:
 
 Sound.hpp:
 
-Vector2f.hpp:
-
-Character.hpp:
-
 Sprite.hpp:
+
+SoundLoad.hpp:
 
 Font_ttf.hpp:
 
 Color.hpp:
 
-ResourceLoader.hpp:
+GamePanel.hpp:
 
-Camera.hpp:
+Scene.hpp:
+
+TextureLoad.hpp:
+
+Tiled.hpp:
+
+StringSplit.hpp:
+
+TileMap.hpp:

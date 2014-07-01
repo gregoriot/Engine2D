@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="90">
+<configurationDescriptor version="94">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="f5" displayName="Characters" projectFiles="true">
       <itemPath>Character.cpp</itemPath>
       <itemPath>Character.hpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f3" displayName="Data" projectFiles="true">
+      <itemPath>TextureCoord.h</itemPath>
+      <itemPath>VertexPos2f.h</itemPath>
     </logicalFolder>
     <logicalFolder name="f6" displayName="Game" projectFiles="true">
       <itemPath>GamePanel.cpp</itemPath>
       <itemPath>GamePanel.hpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
+    <logicalFolder name="f7" displayName="Loaders" projectFiles="true">
+      <itemPath>SoundLoad.cpp</itemPath>
+      <itemPath>SoundLoad.hpp</itemPath>
+      <itemPath>TextureLoad.cpp</itemPath>
+      <itemPath>TextureLoad.hpp</itemPath>
+      <itemPath>Tiled.cpp</itemPath>
+      <itemPath>Tiled.hpp</itemPath>
+    </logicalFolder>
     <logicalFolder name="f2" displayName="Math Modulo" projectFiles="true">
       <itemPath>Collision.cpp</itemPath>
       <itemPath>Collision.hpp</itemPath>
       <itemPath>Color.cpp</itemPath>
       <itemPath>Color.hpp</itemPath>
-      <itemPath>Vector2f.cpp</itemPath>
-      <itemPath>Vector2f.hpp</itemPath>
     </logicalFolder>
-    <logicalFolder name="f3" displayName="Resources" projectFiles="true">
-      <itemPath>Font_ttf.cpp</itemPath>
-      <itemPath>Font_ttf.hpp</itemPath>
-      <itemPath>ResourceLoader.cpp</itemPath>
-      <itemPath>ResourceLoader.hpp</itemPath>
-      <itemPath>Sound.cpp</itemPath>
-      <itemPath>Sound.hpp</itemPath>
+    <logicalFolder name="f8" displayName="Objects" projectFiles="true">
+      <itemPath>Sprite.cpp</itemPath>
+      <itemPath>Sprite.hpp</itemPath>
       <itemPath>Texture.cpp</itemPath>
       <itemPath>Texture.hpp</itemPath>
+      <itemPath>TileMap.cpp</itemPath>
+      <itemPath>TileMap.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="f1" displayName="Scenes" projectFiles="true">
       <itemPath>GamePlay.cpp</itemPath>
@@ -41,10 +49,14 @@
       <itemPath>AL.hpp</itemPath>
       <itemPath>Camera.cpp</itemPath>
       <itemPath>Camera.hpp</itemPath>
+      <itemPath>Font_ttf.cpp</itemPath>
+      <itemPath>Font_ttf.hpp</itemPath>
       <itemPath>GL.cpp</itemPath>
       <itemPath>GL.hpp</itemPath>
-      <itemPath>Sprite.cpp</itemPath>
-      <itemPath>Sprite.hpp</itemPath>
+      <itemPath>Sound.cpp</itemPath>
+      <itemPath>Sound.hpp</itemPath>
+      <itemPath>StringSplit.cpp</itemPath>
+      <itemPath>StringSplit.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Arquivos de Teste"
@@ -58,30 +70,30 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
-  <sourceRootList>
-    <Elem>assets</Elem>
-    <Elem>Assets</Elem>
-  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <commandlineTool>g++</commandlineTool>
+        </ccTool>
         <linkerTool>
           <linkerLibItems>
             <linkerLibLibItem>GL</linkerLibLibItem>
             <linkerLibLibItem>GLU</linkerLibLibItem>
-            <linkerLibLibItem>GLEW</linkerLibLibItem>
+            <linkerLibLibItem>openal</linkerLibLibItem>
             <linkerLibLibItem>SDL</linkerLibLibItem>
             <linkerLibLibItem>SDL_image</linkerLibLibItem>
             <linkerLibLibItem>SDL_mixer</linkerLibLibItem>
             <linkerLibLibItem>SDL_ttf</linkerLibLibItem>
-            <linkerLibLibItem>openal</linkerLibLibItem>
             <linkerLibLibItem>alut</linkerLibLibItem>
+            <linkerLibLibItem>glut</linkerLibLibItem>
+            <linkerLibLibItem>GLEW</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -125,10 +137,6 @@
       </item>
       <item path="MenuScene.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="ResourceLoader.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ResourceLoader.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Scene.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Scene.hpp" ex="false" tool="3" flavor2="0">
@@ -137,17 +145,37 @@
       </item>
       <item path="Sound.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="SoundLoad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SoundLoad.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Sprite.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Sprite.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringSplit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringSplit.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Texture.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Texture.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Vector2f.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TextureCoord.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Vector2f.hpp" ex="false" tool="3" flavor2="0">
+      <item path="TextureLoad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextureLoad.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TileMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileMap.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Tiled.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Tiled.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VertexPos2f.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -212,10 +240,6 @@
       </item>
       <item path="MenuScene.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="ResourceLoader.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ResourceLoader.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Scene.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Scene.hpp" ex="false" tool="3" flavor2="0">
@@ -224,17 +248,37 @@
       </item>
       <item path="Sound.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="SoundLoad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SoundLoad.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Sprite.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Sprite.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringSplit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringSplit.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Texture.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Texture.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Vector2f.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TextureCoord.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Vector2f.hpp" ex="false" tool="3" flavor2="0">
+      <item path="TextureLoad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextureLoad.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TileMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TileMap.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Tiled.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Tiled.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VertexPos2f.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

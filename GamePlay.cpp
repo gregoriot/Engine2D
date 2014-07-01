@@ -10,16 +10,29 @@ GamePlay::GamePlay(GamePanel* _parent, GL* _gl, AL* _al) {
     
     camera = new Camera();
     camera->init(0,0);
+    
+    gl->beginRender2D();
+    gl->enableTexture2D();
 }
 
 GamePlay::~GamePlay() {
-    
+    gl->endRender2D();
+    gl->disableTexture2D();
 }
 
 void GamePlay::init(){
-   character = new Character();
-   character->init(0,0, 2, 8, ResourceLoader::PNG("Assets/youKnowHow.png"), gl, al);
-   font.init("Fonts/iwantv2.ttf", 36, FONT_TTF_NORMAL);
+    sprite = new Sprite();
+    sprite->init(200, 200, TextureLoad::PNG("Assets/tileset.png"));
+    sprite->initBuffers();
+    
+    character = new Character();
+    character->init(200, 200, 2, 8, TextureLoad::PNG("Assets/youKnowHow.png"), al);
+    font.init("Fonts/iwantv2.ttf", 36, FONT_TTF_NORMAL);
+   
+    Tiled* tiled = new Tiled();
+    tiled->load("Assets/tilemap.txt", TextureLoad::PNG("Assets/tileset.png"));
+    tileMap = tiled->tileMap;
+    tileMap->initBuffers();
 }
 
 void GamePlay::input(SDL_Event& e){
@@ -32,8 +45,8 @@ void GamePlay::input(SDL_Event& e){
 
         //Mouse motion.
         if(e.type == SDL_MOUSEMOTION ) {
-//            character->x = e.button.x;
-//            character->y = e.button.y;
+            character->position.x = e.button.x;
+            character->position.y = e.button.y;
         }
         
         //Mouse button was pressed.
@@ -58,8 +71,10 @@ void GamePlay::input(SDL_Event& e){
                     parent->run = false;
                     break;
                 case SDLK_LEFT:
+                    character->currentAnimation = 1;
                     break;
                 case SDLK_RIGHT:
+                    character->currentAnimation = 0;
                     break;
                 case SDLK_UP:
                     break;
@@ -77,18 +92,15 @@ void GamePlay::update(long difTime){
 }
 
 void GamePlay::render(){
-    gl->beginRender2D();
-    gl->enableTexture2D();
+    tileMap->render();
+    
+//    sprite->render();
     
     character->render();
     
+    char buff[10];
+    sprintf(buff, "%d", parent->fps);
     font.color = new Color(1,0,0,1);
-    font.render("jhk", width * 0.14f, height *0.17f);
-
-    gl->disableTexture2D();
-    gl->endRender2D();
-
-    //Update screen
-    SDL_GL_SwapBuffers();
+    font.render(buff, width * 0.14f, height *0.17f);
 }
 

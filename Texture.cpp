@@ -1,11 +1,14 @@
 #include "Texture.hpp"
 
 Texture::Texture() {
-
-}
-
-Texture::~Texture() {
-    glDeleteTextures( 1, &id);
+    //Init texture ID as invalid
     id = 0;
 }
 
+Texture::~Texture() {
+    //Delete texture buffer from video board by ID
+    glDeleteTextures( 1, &id);
+    
+    //Set texture ID as invalid
+    id = 0;
+}

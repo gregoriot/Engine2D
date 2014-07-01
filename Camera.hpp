@@ -12,8 +12,7 @@
 
 #include <AL/al.h>
 #include <AL/alut.h>
-
-#include "Vector2f.hpp"
+#include "VertexPos2f.h"
 
 class Camera {
 public:
@@ -36,10 +35,10 @@ public:
     * 
     * @param Vector2f* position
     */
-    void init(Vector2f* position);
+    void init(VertexPos2f* position);
     
     /** Position of camera.*/
-    Vector2f* position;
+    VertexPos2f* position;
     
     // Position of the Listener.
     ALfloat listenerPos[3];

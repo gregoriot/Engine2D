@@ -11,12 +11,10 @@
 #ifndef FONT_TTF_HPP
 #define	FONT_TTF_HPP
 
-#include <SDL/SDL_opengl.h>
 #include <SDL/SDL_ttf.h>
-
-#include "Color.hpp"
-
+#include <GL/gl.h>
 #include <iostream>
+#include "Color.hpp"
 
 #define FONT_TTF_NORMAL 0
 #define FONT_TTF_BOLD 1
@@ -26,6 +24,11 @@
 
 class Font_ttf{
 public:
+    /** Size of font.*/
+    float size;
+    /** Color of font.*/
+    Color* color;
+    
     /** Default constructor.*/
     Font_ttf();
     
@@ -59,14 +62,10 @@ public:
     *    iny y position
     */
     void render(const char* text, float x, float y);
-    
-    /** Size of font.*/
-    float size;
-    /** Color of font.*/
-    Color* color;
+
 private:
     /** Font in SDL context.*/
-    TTF_Font* font = NULL;
+    TTF_Font* font;
     /** File Path of font.*/
     const char* filePath;
 };
